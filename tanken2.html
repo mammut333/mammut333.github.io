@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+<meta charset="utf-8" />
+<title>tanken2</title>
+<meta name="generator" content="Geany 1.29" />
+
+<style>
+
+ html {background-color: red;
+	 font-size: 2.5em;
+	 text-align: center;
+	 font-weight: bold;
+	 line-height: 2em;
+	 font-family: Comic Sans MS;
+ } 
+
+ img {padding-left: 7em;
+	//	margin-top: 0.7em;
+		margin-bottom: 1.5em;
+		width: 12em;
+}
+	
+</style>
+
+</head>
+
+<body>
+	
+	
+
+ 
+  
+<script>"use strict";
+
+let gefahreneKilometer = prompt("Wie viele km bist du gefahren?");
+let getankteMenge = prompt("Wie viele Liter hast du getankt?");
+let tankGroesse = prompt("Wie viele Liter passen in deinen Tank?");
+let verbrauch = (getankteMenge/gefahreneKilometer*100).toFixed(2);
+let reichweite = Math.round(tankGroesse*gefahreneKilometer/getankteMenge);
+
+document.write(`Dein Auto verbraucht ${verbrauch} Liter auf 100 km. <br> 
+               Mit einer Tankfüllung kommst du ${reichweite} Kilometer weit<br>`);
+               
+		if(verbrauch > 7) {document.write("Dein Auto verbraucht zu viel Sprit!");
+		} else {
+			document.write("Sehr gut, du hast ein sparsammes Auto!");
+		}
+
+</script> 
+<p style="color: blue;">Gute Fahrt</p>
+  
+  <img src="Tankstelle.png"/>
+<a style="font-size: 0.5em; color: green;" href="tanken.html">Zurück zur ersten Seite</a>
+</body>
+
+</html>
