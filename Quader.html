@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+<meta charset="utf-8" />
+<title>Quader</title>
+<meta name="generator" content="Geany 1.29" />
+
+	<style>
+     
+     h1 {text-align: center;
+		 font-size: 3em;
+	 }	
+	 
+	 p {font-size: 1.5em;
+		font-weight: bold;	
+     }	
+     
+     img {padding-left: 35em;}	
+     
+     div {color: green;
+		 font-weight: bold;
+		 font-size: 2em;
+	 } 
+	 
+	
+	
+	
+	
+	</style>
+</head>
+
+<body>
+	
+	<h1>Der Quader</h1>
+	
+	<img src="Quader.png">
+	
+	<p style="color: red;">Achtung!</p>
+	<p>Alle Seitenlängen müssen die <b>gleiche Einheit</b> haben!</p>
+	<p>Ein Komma muss als <b>Punkt</b> geschrieben werden!</p>
+	<p>Wenn du nicht mehr weißt, wie man Einheiten umrechnet, benutze den 
+	<a href="Längenumrechnung.html" title="Längenumrechner">Längenumrechner</a>
+	</p>
+	
+	<hr />
+	
+<div>	
+  <script>
+	  
+  let einheit = prompt("In welcher Einheit gibst du die Längen ein?","m, dm, cm, mm");  
+  let A = prompt("Gebe die Länge der Seite a ein");
+  let B = prompt("Gebe die Länge der Seite b ein");
+  let C = prompt("Gebe die Länge der Seite c ein");  
+  
+  let oberFlaeche = 2 * (A * B + A * C + B * C).toFixed(2);
+  let volumen = (A * B * C).toFixed(3);
+  
+  document.write(`Oberfläche O = ${oberFlaeche} ${einheit} <sup>2</sup><br />
+                  Volumen V = ${volumen} ${einheit}<sup>3</sup>`); 
+     			               
+  </script>
+  <p></p>
+  <p></p>
+ 
+</div>	
+ <div style="color:#A52A2A,font-size: 1em">
+  <a href="Quader.html" title="Quader">Neuer Quader</a> <br />
+  <a href="Körperberechnungen.html" title="Körper">zurück zur Startseite</a>
+ 
+  </div>
+	
+ 
+</body>
+
+</html>

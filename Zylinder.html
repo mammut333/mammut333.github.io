@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+<meta charset="utf-8" />
+<title>Zylinder</title>
+<meta name="generator" content="Geany 1.29" />
+
+<style>
+     
+     h1 {text-align: center;
+		 font-size: 3em;
+	 }	
+	 
+	 p {font-size: 1.5em;
+		font-weight: bold;	
+     }	
+     
+     img {padding-left: 35em;}	
+     
+     div {color: green;
+		 font-weight: bold;
+		 font-size: 2em;
+	 } 
+</style>
+</head>
+
+<body>
+
+<h1>Der Zylinder</h1>
+	
+	<img src="Zylinder.png">
+	
+	<p style="color: red;">Achtung!</p>
+	<p>Alle Längen müssen die gleiche Einheit haben!</p>
+	<p>Ein Komma muss als Punkt geschrieben werden!</p>
+	<p>Wenn du nicht mehr weißt, wie man Einheiten umrechnet, benutze den 
+	<a href="Längenumrechnung.html" title="Längenumrechner">Längenumrechner</a>
+	</p>
+	
+<hr />
+	
+<div>	
+  <script>
+	  
+  let einheit = prompt("In welcher Einheit gibst du die Längen ein?","m, dm, cm, mm");  
+  let radius = prompt("Gebe die Länge des Radius r ein");
+  let hoehe = prompt("Gebe die Länge der Höhe h ein");
+   
+  
+  let oberFlaeche = (2 * 3.14 * radius * (radius + hoehe)).toFixed(2);
+  let volumen = (3.14 * radius * radius * hoehe).toFixed(3);
+  
+  document.write(`Oberfläche O = ${oberFlaeche} ${einheit} <sup>2</sup><br />
+                  Volumen V = ${volumen} ${einheit}<sup>3</sup>`); 
+     			               
+  </script>
+  </div>
+   
+  <hr />
+  
+	
+ <div style="font-size: 1.5em">
+  <a href="Zylinder.html" title="Zylinder">Neuer Zylinder</a> <br />
+  <a href="Körperberechnungen.html" title="Körperberechnungen">Zurück zur Startseite</a>
+ </div> 
+
+</body>
+
+</html>
