@@ -4,74 +4,133 @@
 
 <head>
 <meta charset="utf-8" />
-<title>Quader</title>
+<title>Formulare4</title>
 <meta name="generator" content="Geany 1.29" />
 
-	<style>
-     
-     h1 {text-align: center;
-		 font-size: 3em;
-	 }	
-	 
-	 p {font-size: 1.5em;
-		font-weight: bold;	
-     }	
-     
-     img {padding-left: 35em;}	
-     
-     div {color: green;
-		 font-weight: bold;
-		 font-size: 2em;
-	 } 
-	 
-	
-	
-	
-	
-	</style>
+<style>
+
+body {
+	background-color: #1E90FF;
+	text-size: 50px;
+	font-weight: bold;
+}
+
+h1 {text-align: center;
+}
+
+p {
+	color: black;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+fieldset {
+	width: 300px;
+	margin-left: 50px;
+}
+
+div {
+	font-size: 18px;
+}
+
+img {
+	float: right;
+	margin-right: 600px;
+	padding-top: 100px;
+}
+
+#Ergebnis {
+	color: red;
+	font-size: 25px;
+}
+
+#Achtung {
+	color: red;
+}
+
+a {
+	color: black;
+	font-size: 20px;
+}
+</style>
 </head>
 
 <body>
+	<h1>Volumen und Oberfläche eines Quaders</h1>
+<script>
+
+function rechneAus() {
+let einheit = document.getElementsByName("einheit");
+let laenge1 = document.getElementById(`laenge1`).value;
+let laenge2 = document.getElementById(`laenge2`).value;
+let laenge3 = document.getElementById(`laenge3`).value;
+
+if (einheit[0].checked) {
+		einheit = "mm";
+	}else if(einheit[1].checked) {
+			einheit = "cm";
+	}else if (einheit[2].checked) {
+	einheit = "dm";
+	}else if (einheit[3].checked) {
+		einheit = "m";
+	} 
+
+
+let volumen = (laenge1 * laenge2 * laenge3);
+let oberflaeche = (2 * (laenge1 * laenge2 + laenge1 * laenge3 + laenge2 * laenge3));
+
+document.getElementById(`Ergebnis`).innerHTML = (`Das Volumen des Quaders beträgt ${volumen}  ${einheit} <sup>3</sup>
+<br>und die Oberfläche ist ${oberflaeche}  ${einheit} <sup>2</sup> groß.`);
+}
+
+</script>	
+
+<img src="quader.png">
+
+<p id="Ergebnis"></p>
+
+<form id="form1">
 	
-	<h1>Der Quader</h1>
+	<fieldset>
+<p>Wähle die richtige Einheit</p>
+<div>
+<input type="radio" name="einheit" id="einheit1" value="mm"/>
+	<label for="einheit1">mm</label>
+<input type="radio" name="einheit" id="einheit2" value="cm"/>
+	<label for="einheit2">cm</label>
+<input type="radio" name="einheit" id="einheit3" value="dm"/>
+	<label for="einheit3">dm</label>
+<input type="radio" name="einheit" id="einheit4" value="m"/>
+	<label for="einheit4">m</label>
+</div>
+<p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
+<p>Gebe die Länge der ersten Seite ein<br>
+   Nur die Zahl, ohne Einheit</p>
+<input type="number" name="laenge1" id="laenge1"/>
+<br>
+<p>Gebe die Länge der zweite Seite ein<br>
+   Nur die Zahl, ohne Einheit</p>
+<input type="number" name="laenge2" id="laenge2"/>
+<br>
+<p>Gebe die Länge der dritten Seite ein<br>
+   Nur die Zahl, ohne Einheit</p>
+<input type="number" name="laenge3" id="laenge3"/>
+<br>
+<br>
+<br>
+<input type="button" onClick="rechneAus()" value="Zum Ergebnis"/>
+<br>
+<br>
+<input type="reset" form="form1" value="Eingabe löschen"/>
+	</fieldset>
+</form>
+
+<ul>
 	
-	<img src="Quader.png">
-	
-	<p style="color: red;">Achtung!</p>
-	<p>Alle Seitenlängen müssen die <b>gleiche Einheit</b> haben!</p>
-	<p>Ein Komma muss als <b>Punkt</b> geschrieben werden!</p>
-	<p>Wenn du nicht mehr weißt, wie man Einheiten umrechnet, benutze den 
-	<a href="Längenumrechnung.html" title="Längenumrechner">Längenumrechner</a>
-	</p>
-	
-	<hr />
-	
-<div>	
-  <script>
-	  
-  let einheit = prompt("In welcher Einheit gibst du die Längen ein?","m, dm, cm, mm");  
-  let A = prompt("Gebe die Länge der Seite a ein");
-  let B = prompt("Gebe die Länge der Seite b ein");
-  let C = prompt("Gebe die Länge der Seite c ein");  
-  
-  let oberFlaeche = 2 * (A * B + A * C + B * C).toFixed(2);
-  let volumen = (A * B * C).toFixed(3);
-  
-  document.write(`Oberfläche O = ${oberFlaeche} ${einheit} <sup>2</sup><br />
-                  Volumen V = ${volumen} ${einheit}<sup>3</sup>`); 
-     			               
-  </script>
-  <p></p>
-  <p></p>
- 
-</div>	
- <div style="color:#A52A2A,font-size: 1em">
-  <a href="Quader.html" title="Quader">Neuer Quader</a> <br />
-  <a href="Körperberechnungen.html" title="Körper">zurück zur Startseite</a>
- 
-  </div>
-	
- 
+<li><a href="index.html" title="Zurück zur Startseite">Zur Startseite</a></li>
+<br>
+<li><a href="Körperberechnungen.html" title="Zurück zur Matheseite">Zur Matheseite</a></li>
+</ul>
 </body>
 
 </html>
