@@ -9,63 +9,137 @@
 
 <style>
      
-     h1 {text-align: center;
-		 font-size: 3em;
-	 }	
-	 
-	 p {font-size: 1.5em;
-		font-weight: bold;	
-     }	
-     
-     img {padding-left: 35em;}	
-     
-     div {color: green;
-		 font-weight: bold;
-		 font-size: 2em;
-	 } 
+    body {
+	background-color: #1E90FF;
+	text-size: 50px;
+	font-weight: bold;
+}
+
+h1 {
+	text-align: center;
+}
+
+p {
+	color: black;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+fieldset {
+	margin: 0 auto;
+	width: 600px;
+	
+}
+
+div {
+	font-size: 18px;
+	
+}
+
+img {
+	width: 150px;
+	margin-left: 150px;
+}
+
+#Ergebnis {
+	color: red;
+	font-size: 25px;
+}
+
+#Achtung {
+	color: red;
+}
+
+a {
+	color: black;
+	font-size: 20px;
+	text-decoration: none;
+}
+    
 </style>
 </head>
 
 <body>
 
 <h1>Der Zylinder</h1>
-	
-	<img src="Zylinder.png">
-	
-	<p style="color: red;">Achtung!</p>
-	<p>Alle Längen müssen die gleiche Einheit haben!</p>
-	<p>Ein Komma muss als Punkt geschrieben werden!</p>
-	<p>Wenn du nicht mehr weißt, wie man Einheiten umrechnet, benutze den 
-	<a href="Längenumrechnung.html" title="Längenumrechner">Längenumrechner</a>
-	</p>
-	
-<hr />
-	
-<div>	
+
   <script>
-	  
-  let einheit = prompt("In welcher Einheit gibst du die Längen ein?","m, dm, cm, mm");  
-  let radius = prompt("Gebe die Länge des Radius r ein");
-  let hoehe = prompt("Gebe die Länge der Höhe h ein");
+function rechneAus() {  
+  let einheit = document.getElementsByName("einheit");
+  let radius = document.getElementById(`laenge1`).value;
+  let hoehe = document.getElementById(`laenge2`).value;
    
-  
+  if (einheit[0].checked) {
+		einheit = "mm";
+	}else if(einheit[1].checked) {
+			einheit = "cm";
+	}else if (einheit[2].checked) {
+	einheit = "dm";
+	}else if (einheit[3].checked) {
+		einheit = "m";
+	} 
   let oberFlaeche = (2 * 3.14 * radius * (radius + hoehe)).toFixed(2);
   let volumen = (3.14 * radius * radius * hoehe).toFixed(3);
   
-  document.write(`Oberfläche O = ${oberFlaeche} ${einheit} <sup>2</sup><br />
+  document.getElementById(`Ergebnis`).innerHTML = (`Oberfläche O = ${oberFlaeche} ${einheit} <sup>2</sup><br />
                   Volumen V = ${volumen} ${einheit}<sup>3</sup>`); 
-     			               
-  </script>
-  </div>
+   }  			               
+  </script>	
+  
+    <p id="Ergebnis"></p>
+	
+	
+<form id="form1">
+	
+	<fieldset>
+		<img src="zylinder.jpg">
+<p>Wähle die richtige Einheit</p>
+<div>
+<input type="radio" name="einheit" id="einheit1" value="mm"/>
+	<label for="einheit1">mm</label>
+<input type="radio" name="einheit" id="einheit2" value="cm"/>
+	<label for="einheit2">cm</label>
+<input type="radio" name="einheit" id="einheit3" value="dm"/>
+	<label for="einheit3">dm</label>
+<input type="radio" name="einheit" id="einheit4" value="m"/>
+	<label for="einheit4">m</label>
+</div>
+<p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
+<p>Gebe die Länge des Radius ein<br>
+   Nur die Zahl, ohne Einheit</p>
+<input type="number" name="laenge1" id="laenge1"/>
+<br>
+<p>Gebe die Höhe ein<br>
+   Nur die Zahl, ohne Einheit</p>
+<input type="number" name="laenge2" id="laenge2"/>
+<br>
+<br>
+<br>
+<br>
+<input type="button" onClick="rechneAus()" value="Zum Ergebnis"/>
+<br>
+<br>
+<input type="reset" form="form1" value="Eingabe löschen"/>
+<br>
+<br>
+<ul>
+<li><a href="index.html" title="Zurück zur Startseite">Zur Startseite</a></li>
+<br>
+<li><a href="Körperberechnungen.html" title="Zurück zur Matheseite">Zur Matheseite</a></li>
+</ul>
+	</fieldset>
+</form>
+
+
+
+</body>	
+	
+
+  
    
-  <hr />
+  
   
 	
- <div style="font-size: 1.5em">
-  <a href="Zylinder.html" title="Zylinder">Neuer Zylinder</a> <br />
-  <a href="Körperberechnungen.html" title="Körperberechnungen">Zurück zur Startseite</a>
- </div> 
-
-</body>
+ 
 
 </html>
