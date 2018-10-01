@@ -15,7 +15,8 @@ body {
 	font-weight: bold;
 }
 
-h1 {text-align: center;
+h1 {
+	text-align: center;
 }
 
 p {
@@ -25,8 +26,8 @@ p {
 }
 
 fieldset {
-	width: 300px;
-	margin-left: 50px;
+	width: 600px;
+	margin: 0 auto;
 }
 
 div {
@@ -34,9 +35,9 @@ div {
 }
 
 img {
-	float: right;
-	margin-right: 15em;
-	padding-top: 0;
+	margin-left: 150px;
+	width: 150px;
+	
 }
 
 #Ergebnis {
@@ -53,6 +54,7 @@ a {
 	font-size: 20px;
 	text-decoration: none;
 }
+
 </style>
 </head>
 
@@ -86,13 +88,14 @@ document.getElementById(`Ergebnis`).innerHTML = (`Das Volumen des Quaders beträ
 
 </script>	
 
-<img src="quader.png">
+
 
 <p id="Ergebnis"></p>
 
 <form id="form1">
 	
 	<fieldset>
+	<img src="quader.png">
 <p>Wähle die richtige Einheit</p>
 <div>
 <input type="radio" name="einheit" id="einheit1" value="mm"/>
@@ -123,15 +126,17 @@ document.getElementById(`Ergebnis`).innerHTML = (`Das Volumen des Quaders beträ
 <br>
 <br>
 <input type="reset" form="form1" value="Eingabe löschen"/>
-	</fieldset>
-</form>
-
+<br>
+<br>
 <ul>
-	
 <li><a href="index.html" title="Zurück zur Startseite">Zur Startseite</a></li>
 <br>
 <li><a href="Körperberechnungen.html" title="Zurück zur Matheseite">Zur Matheseite</a></li>
 </ul>
+	</fieldset>
+</form>
+
+
 </body>
 
 </html>
