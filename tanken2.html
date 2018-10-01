@@ -9,21 +9,24 @@
 
 <style>
 
- body {
+body {
 	 background-color: #BFBFBF;
-	 font-size: 2em;
+	 font-size: 20px;
 	 text-align: center;
 	 font-weight: bold;
-	 line-height: 2em;
 	 font-family: Comic Sans MS;
  } 
 
  img {
-	/* margin-left: 5em;
-	//	margin-top: 0.7em;*/
+	float: right;
 	margin-bottom: 1.5em;
-	width: 10em;
-	border-radius:10%;
+	width: 400px;
+	padding-right: 500px;
+}
+	fieldset {
+	width: 300px;
+	margin-left: 50px;
+	margin-top: 0;
 }
 	
 </style>
@@ -32,30 +35,58 @@
 
 <body>
 	
-<a style="font-size: 0.5em; color: green;" href="tanken.html">Zurück zur ersten Seite</a>
+<a style="font-size: 1.5; color: green;" href="tanken.html">Zurück zur ersten Seite</a>
+<br>
 <br>	
  <img src="Tankstelle.png"/>
 
  <br>
   
+  <p id="Ergebnis" style="color: blue"></p>
+  <p id="spar"></p>
+ 
 <script>"use strict";
 
-let gefahreneKilometer = prompt("Wie viele km bist du gefahren?");
-let getankteMenge = prompt("Wie viele Liter hast du getankt?");
-let tankGroesse = prompt("Wie viele Liter passen in deinen Tank?");
+function rechneAus() {
+let gefahreneKilometer = document.getElementById(`kilometer`).value;
+let getankteMenge = document.getElementById(`liter`).value;
+let tankGroesse = document.getElementById(`menge`).value;
 let verbrauch = (getankteMenge/gefahreneKilometer*100).toFixed(2);
 let reichweite = Math.round(tankGroesse*gefahreneKilometer/getankteMenge);
 
-document.write(`Dein Auto verbraucht ${verbrauch} Liter auf 100 km. <br> 
+document.getElementById(`Ergebnis`).innerHTML = (`Dein Auto verbraucht ${verbrauch} Liter auf 100 km. <br> 
                Mit einer Tankfüllung kommst du ${reichweite} Kilometer weit<br>`);
                
-		if(verbrauch > 7) {document.write("Dein Auto verbraucht zu viel Sprit!");
+		if(verbrauch > 7) {document.getElementById(`spar`).innerHTML = ("Dein Auto verbraucht zu viel Sprit!");
 		} else {
-			document.write("Sehr gut, du hast ein sparsammes Auto!");
+	document.getElementById(`spar`).innerHTML = ("Sehr gut, du hast ein sparsammes Auto!");
 		}
+	}
 
-</script> 
-<p style="color: blue;">Gute Fahrt!</p>
+</script>
+
+<form id="form1">
+	
+	<fieldset> 
+<p>Wie viele Kilometer bist du gefahren?</p>
+<input type="text" name="kilometer" id="kilometer"/>
+<br>
+<p>Wie viele Liter hast du getankt?</p>
+<input type="text" name="liter" id="liter"/>
+<br>
+<p>Wie viele Liter passen in deinen Tank?</p>
+<input type="text" name="menge" id="menge"/>
+<br>
+<br>
+<input type="button" onClick="rechneAus()" value="Zum Ergebnis"/>
+<br>
+<br>
+<input type="reset" form="form1" value="Eingabe löschen"/>
+	</fieldset>
+</form>
+
+
+<p style="color: blue; font-size: 30px;">Gute Fahrt!</p>
   
  
 </body>
