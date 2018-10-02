@@ -11,7 +11,7 @@
 
     body {
 	background-color: #1E90FF;
-	text-size: 50px;
+	font-size: 18px;
 	font-weight: bold;
 }
 
@@ -27,7 +27,6 @@ p {
 
 fieldset {
 	margin-left:20%;
-	width: 60%;
 	border-radius: 10px;
 	background: #0000FF;
 	border: 2px solid black;
@@ -59,7 +58,7 @@ div {
 }
 
 img {
-	width: 250px;
+	width: 70%;
 	margin-left: 15%;
 	border-radius: 15px;
 }
@@ -133,6 +132,8 @@ document.getElementById(`Ergebnis2`).innerHTML = (`Oberfläche O = 2 x (a x b + 
 	<label for="einheit1">mm</label>
 <input type="radio" name="einheit" id="einheit2" value="cm"/>
 	<label for="einheit2">cm</label>
+	<br>
+	<br>
 <input type="radio" name="einheit" id="einheit3" value="dm"/>
 	<label for="einheit3">dm</label>
 <input type="radio" name="einheit" id="einheit4" value="m"/>
@@ -156,6 +157,7 @@ document.getElementById(`Ergebnis2`).innerHTML = (`Oberfläche O = 2 x (a x b + 
 <input type="button" onClick="rechneAus()" value="Zum Ergebnis"/>
 <br>
 <br>
+<fieldset>
 <input type="reset" form="form1" value="Eingabe löschen"/>
 <br>
 <br>
@@ -164,7 +166,7 @@ document.getElementById(`Ergebnis2`).innerHTML = (`Oberfläche O = 2 x (a x b + 
 <br>
 <li><a href="Körperberechnungen.html" title="Zurück zur Matheseite">Zur Matheseite</a></li>
 </ul>
-	</fieldset>
+</fieldset>
 </form>
 </div>
 <div>
