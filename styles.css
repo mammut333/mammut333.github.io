@@ -37,6 +37,10 @@ body {
 	margin-top: 0;
 }
 
+#navbar-links {
+	margin-left: 15%;
+}
+
 .container {
 	max-width: 1000px;
 	margin: 0 auto;
@@ -48,6 +52,7 @@ body {
 }
 
 .column {
+    margin-left: 15%;
 	min-width: 300px;
 	display: inline-block;
 	vertical-align: top;
