@@ -28,6 +28,7 @@ body {
 	float: left;
 	font-size: 20px;
 	font-weight: bold;
+	margin-left: 10%;
 }
 
 #header-nav {
@@ -35,10 +36,7 @@ body {
 	float: right;
 	padding-left: 20px;
 	margin-top: 0;
-}
-
-#navbar-links {
-	margin-left: 15%;
+	margin-right: 10%;
 }
 
 .container {
@@ -52,7 +50,7 @@ body {
 }
 
 .column {
-    margin-left: 15%;
+    margin-left: 12%;
 	min-width: 300px;
 	display: inline-block;
 	vertical-align: top;
