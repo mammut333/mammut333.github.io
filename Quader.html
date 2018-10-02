@@ -105,10 +105,10 @@ if (einheit[0].checked) {
 let volumen = (laenge1 * laenge2 * laenge3);
 let oberflaeche = (2 * (laenge1 * laenge2 + laenge1 * laenge3 + laenge2 * laenge3));
 
-document.getElementById(`Ergebnis`).innerHTML = (`Volumen V = Länge a x Breite b x Höhe c<br>
+document.getElementById(`Ergebnis`).innerHTML = (`Volumen V = <br>Länge a x Breite b x Höhe c<br>
                                               = ${laenge1} ${einheit} x ${laenge2} ${einheit} x ${laenge3} ${einheit}<br>
                                               = ${volumen}  ${einheit} <sup>3</sup>`);
-document.getElementById(`Ergebnis2`).innerHTML = (`Oberfläche O = 2 x (a x b + a x c + b x c)<br>
+document.getElementById(`Ergebnis2`).innerHTML = (`Oberfläche O = <br>2 x (a x b + a x c + b x c)<br>
         = 2 x (${laenge1} ${einheit} x ${laenge2} ${einheit} + ${laenge1} ${einheit} x ${laenge3} ${einheit} + ${laenge2} ${einheit} 
         x ${laenge3} ${einheit})<br>
                                                = ${oberflaeche}  ${einheit} <sup>2</sup>`);
