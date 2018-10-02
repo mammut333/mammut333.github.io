@@ -26,14 +26,35 @@ p {
 }
 
 fieldset {
-	margin: 0 auto;
+	margin-left:50px;
 	width: 600px;
-	
+	border-radius: 10px;
+	background: #0000FF;
+	border: 2px solid black;
+	display: block;
 }
 
-div {
+label	{
+	border: 2px solid black;
+	border-radius: 10%;
+	padding: 2px 10px; 
+	background: #1E90FF;
 	font-size: 18px;
+}
+
+
 	
+
+div {
+	
+	display: inline-block;
+	vertical-align: top;
+}
+
+#feld2	{
+	width: 400px;
+	margin-top: 10px;
+	margin-left: 100px;
 }
 
 img {
@@ -41,9 +62,9 @@ img {
 	margin-left: 150px;
 }
 
-#Ergebnis {
+#Ergebnis, #Ergebnis2 {
 	color: red;
-	font-size: 25px;
+	font-size: 23px;
 }
 
 #Achtung {
@@ -61,7 +82,7 @@ a {
 
 <body>
 
-<h1>Der Zylinder</h1>
+
 
   <script>
 function rechneAus() {  
@@ -81,29 +102,33 @@ function rechneAus() {
   let oberFlaeche = (2 * 3.14 * radius * (radius + hoehe)).toFixed(2);
   let volumen = (3.14 * radius * radius * hoehe).toFixed(3);
   
-  document.getElementById(`Ergebnis`).innerHTML = (`Oberfläche O = ${oberFlaeche} ${einheit} <sup>2</sup><br />
-                  Volumen V = ${volumen} ${einheit}<sup>3</sup>`); 
+  document.getElementById(`Ergebnis`).innerHTML = (`Oberfläche O = 2 x &Pi; x r <sup>2</sup> 
+  + 2 x r x &Pi; <br>
+  = ${oberFlaeche} ${einheit} <sup>2</sup>`);
+
+  document.getElementById(`Ergebnis2`).innerHTML = (`Volumen V = &Pi; x r <sup>2</sup> x h = ${volumen} ${einheit}<sup>3</sup>`); 
    }  			               
   </script>	
   
-    <p id="Ergebnis"></p>
+    
 	
-	
+<div>	
 <form id="form1">
 	
 	<fieldset>
+		<h1>Der Zylinder</h1>
 		<img src="zylinder.jpg">
 <p>Wähle die richtige Einheit</p>
-<div>
-<input type="radio" name="einheit" id="einheit1" value="mm"/>
+
+<input type="radio" name="einheit" id="einheit1" value="mm" class="radiobutton"/>
 	<label for="einheit1">mm</label>
-<input type="radio" name="einheit" id="einheit2" value="cm"/>
+<input type="radio" name="einheit" id="einheit2" value="cm" class="radiobutton"/>
 	<label for="einheit2">cm</label>
-<input type="radio" name="einheit" id="einheit3" value="dm"/>
+<input type="radio" name="einheit" id="einheit3" value="dm" class="radiobutton"/>
 	<label for="einheit3">dm</label>
-<input type="radio" name="einheit" id="einheit4" value="m"/>
+<input type="radio" name="einheit" id="einheit4" value="m" class="radiobutton"/>
 	<label for="einheit4">m</label>
-</div>
+
 <p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
 <p>Gebe die Länge des Radius ein<br>
    Nur die Zahl, ohne Einheit</p>
@@ -129,8 +154,17 @@ function rechneAus() {
 </ul>
 	</fieldset>
 </form>
+</div>
+<div>
+<fieldset id="feld2">
 
+<p>Ergebnis:</p>
+<p id="Ergebnis"></p>
+<br>
+<p id="Ergebnis2"></p></p>
 
+</fieldset>
+</div>
 
 </body>	
 	
