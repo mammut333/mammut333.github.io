@@ -14,12 +14,12 @@ body {
 	 font-size: 20px;
 	 text-align: center;
 	 font-weight: bold;
-	 font-family: Comic Sans MS;
+	 
  } 
 
 img {
 	
-	
+	border-radius: 15px;
 	width: 300px;
 	margin-right: 60px;
 }
@@ -27,6 +27,7 @@ img {
 fieldset {
 	width: 600px;
 	margin: 0 auto;
+	border-radius: 15px;
 }
 
 
@@ -81,6 +82,7 @@ document.getElementById(`Ergebnis`).innerHTML = (`Dein Auto verbraucht ${verbrau
 <input type="button" onClick="rechneAus()" value="Zum Ergebnis"/>
 <br>
 <br>
+<fieldset>
 <input type="reset" form="form1" value="Eingabe löschen"/>
 <br>
 <br>
@@ -89,11 +91,14 @@ document.getElementById(`Ergebnis`).innerHTML = (`Dein Auto verbraucht ${verbrau
 <br>
 <a style="font-size: 1.5; color: green;" href="Körperberechnungen.html">Zur Mathematikseite</a>
 <br>
+<br>
+<p style="color: blue; font-size: 30px;">Gute Fahrt!</p>
+</fieldset>
 	</fieldset>
 </form>
 
 
-<p style="color: blue; font-size: 30px;">Gute Fahrt!</p>
+
   
  
 </body>
