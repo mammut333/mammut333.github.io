@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta charset="utf-8" />
+<title>Pyramide</title>
+<meta name="generator" content="Geany 1.29" />
+
+<style>
+
+    body {
+	background-color: #1E90FF;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+h1 {
+	text-align: center;
+}
+
+p {
+	color: black;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+fieldset {
+	margin-left:20%;
+	border-radius: 10px;
+	background: #0000FF;
+	border: 2px solid black;
+	display: block;
+	padding: 15px;
+}
+
+label	{
+	border: 2px solid black;
+	border-radius: 10%;
+	padding: 2px 8px; 
+	background: #1E90FF;
+	font-size: 18px;
+}
+
+
+	
+
+div {
+		width: 45%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#feld2	{
+	width: 400px;
+	margin-top: 10px;
+	margin-left: 100px;
+}
+
+img {
+	width: 70%;
+	margin-left: 15%;
+	border-radius: 15px;
+}
+
+#Ergebnis, #Ergebnis2 {
+	color: red;
+	font-size: 23px;
+}
+
+#Achtung {
+	color: red;
+}
+
+a {
+	color: black;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+</style>
+</head>
+
+<body>
+	
+<script>
+
+function rechneAus() {
+let einheit = document.getElementsByName("einheit");
+let laenge1 = document.getElementById(`laenge1`).value;
+let laenge2 = document.getElementById(`laenge2`).value;
+
+if (einheit[0].checked) {
+		einheit = "mm";
+	}else if(einheit[1].checked) {
+			einheit = "cm";
+	}else if (einheit[2].checked) {
+	einheit = "dm";
+	}else if (einheit[3].checked) {
+		einheit = "m";
+	} 
+
+
+let volumen = (laenge1 * laenge1 * laenge2 / 3);
+/*let oberflaeche = (2 * (laenge1 * laenge2 + laenge1 * laenge3 + laenge2 * laenge3));*/
+
+document.getElementById(`Ergebnis`).innerHTML = (`Volumen V = <br>(Länge a)<sup>2</sup> x Höhe h / 3<br>
+                                              = (${laenge1} ${einheit}) <sup>2</sup> x ${laenge2} ${einheit} / 3<br>
+                                              = ${volumen}  ${einheit} <sup>3</sup>`);
+
+/*document.getElementById(`Ergebnis2`).innerHTML = (`Oberfläche O = <br>2 x (a x b + a x c + b x c)<br>
+        = 2 x (${laenge1} ${einheit} x ${laenge2} ${einheit} + ${laenge1} ${einheit} x ${laenge3} ${einheit} + ${laenge2} ${einheit} 
+        x ${laenge3} ${einheit})<br>
+                                               = ${oberflaeche}  ${einheit} <sup>2</sup>`);*/
+
+}
+
+</script>	
+
+<div>
+<form id="form1">
+	
+	<fieldset>
+	<h1>Volumen einer Pyramide</h1>
+	<img src="pyramide.png" alt="Pyramide">
+<p>Wähle die richtige Einheit</p>
+
+<input type="radio" name="einheit" id="einheit1" value="mm"/>
+	<label for="einheit1">mm</label>
+<input type="radio" name="einheit" id="einheit2" value="cm"/>
+	<label for="einheit2">cm</label>
+	<br>
+	<br>
+<input type="radio" name="einheit" id="einheit3" value="dm"/>
+	<label for="einheit3">dm</label>
+<input type="radio" name="einheit" id="einheit4" value="m"/>
+	<label for="einheit4">m</label>
+
+<p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
+<p>Gebe die Seitenänge a ein<br>
+   Nur die Zahl, ohne Einheit</p>
+<input type="text" name="laenge1" id="laenge1"/>
+<br>
+<p>Gebe die Höhe h ein<br>
+   Nur die Zahl, ohne Einheit</p>
+<input type="text" name="laenge2" id="laenge2"/>
+<br>
+<br>
+<input type="button" onClick="rechneAus()" value="Zum Ergebnis"/>
+<br>
+<br>
+<fieldset>
+<input type="reset" form="form1" value="Eingabe löschen"/>
+<br>
+<br>
+<ul>
+<li><a href="index.html" title="Zurück zur Startseite">Zur Startseite</a></li>
+<br>
+<li><a href="Körperberechnungen.html" title="Zurück zur Matheseite">Zur Matheseite</a></li>
+</ul>
+</fieldset>
+</fieldset>
+</form>
+</div>
+<div>
+<fieldset>
+<p>Ergebniss:</p>
+<br>
+<p id="Ergebnis"></p>
+<br>
+<p id="Ergebnis2"></p>
+</fieldset>
+
+</div>
+
+</body>
+
+</html>
