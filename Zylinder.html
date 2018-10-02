@@ -52,7 +52,7 @@ div {
 }
 
 #feld2	{
-	width: 400px;
+	width: 500px;
 	margin-top: 10px;
 	margin-left: 100px;
 }
@@ -60,6 +60,7 @@ div {
 img {
 	width: 300px;
 	margin-left: 150px;
+	border-radius: 15px;
 }
 
 #Ergebnis, #Ergebnis2 {
@@ -104,9 +105,12 @@ function rechneAus() {
   
   document.getElementById(`Ergebnis`).innerHTML = (`Oberfläche O = 2 x &Pi; x r <sup>2</sup> 
   + 2 x r x &Pi; <br>
+  = 2 x 3.14 x (${radius} ${einheit})<sup>2</sup> + 2 x 3.14 x ${radius} ${einheit} x ${hoehe} ${einheit}<br>
   = ${oberFlaeche} ${einheit} <sup>2</sup>`);
 
-  document.getElementById(`Ergebnis2`).innerHTML = (`Volumen V = &Pi; x r <sup>2</sup> x h = ${volumen} ${einheit}<sup>3</sup>`); 
+  document.getElementById(`Ergebnis2`).innerHTML = (`Volumen V = &Pi; x r <sup>2</sup> x h<br>
+   = 3.14 x (${radius} ${einheit})<sup>2</sup> x ${hoehe} ${einheit}<br>
+   = ${volumen} ${einheit}<sup>3</sup>`); 
    }  			               
   </script>	
   
@@ -132,11 +136,11 @@ function rechneAus() {
 <p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
 <p>Gebe die Länge des Radius ein<br>
    Nur die Zahl, ohne Einheit</p>
-<input type="number" name="laenge1" id="laenge1"/>
+<input type="text" name="laenge1" id="laenge1"/>
 <br>
 <p>Gebe die Höhe ein<br>
    Nur die Zahl, ohne Einheit</p>
-<input type="number" name="laenge2" id="laenge2"/>
+<input type="text" name="laenge2" id="laenge2"/>
 <br>
 <br>
 <br>

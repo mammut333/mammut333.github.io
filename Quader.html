@@ -9,7 +9,7 @@
 
 <style>
 
-body {
+    body {
 	background-color: #1E90FF;
 	text-size: 50px;
 	font-weight: bold;
@@ -26,23 +26,46 @@ p {
 }
 
 fieldset {
+	margin-left:50px;
 	width: 600px;
-	margin: 0 auto;
+	border-radius: 10px;
+	background: #0000FF;
+	border: 2px solid black;
+	display: block;
 }
 
-div {
+label	{
+	border: 2px solid black;
+	border-radius: 10%;
+	padding: 2px 10px; 
+	background: #1E90FF;
 	font-size: 18px;
 }
 
-img {
-	margin-left: 150px;
-	width: 300px;
+
 	
+
+div {
+	
+	display: inline-block;
+	vertical-align: top;
 }
 
-#Ergebnis {
+#feld2	{
+	width: 400px;
+	margin-top: 10px;
+	margin-left: 100px;
+}
+
+img {
+	width: 300px;
+	margin-left: 150px;
+	border-radius: 15%;
+}
+
+#Ergebnis, #Ergebnis2 {
 	color: red;
-	font-size: 25px;
+	font-size: 23px;
 }
 
 #Achtung {
@@ -59,7 +82,7 @@ a {
 </head>
 
 <body>
-	<h1>Volumen und Oberfläche eines Quaders</h1>
+	
 <script>
 
 function rechneAus() {
@@ -82,19 +105,26 @@ if (einheit[0].checked) {
 let volumen = (laenge1 * laenge2 * laenge3);
 let oberflaeche = (2 * (laenge1 * laenge2 + laenge1 * laenge3 + laenge2 * laenge3));
 
-document.getElementById(`Ergebnis`).innerHTML = (`Das Volumen des Quaders beträgt ${volumen}  ${einheit} <sup>3</sup>
-<br>und die Oberfläche ist ${oberflaeche}  ${einheit} <sup>2</sup> groß.`);
+document.getElementById(`Ergebnis`).innerHTML = (`Volumen V = Länge a x Breite b x Höhe c<br>
+                                              = ${laenge1} ${einheit} x ${laenge2} ${einheit} x ${laenge3} ${einheit}<br>
+                                              = ${volumen}  ${einheit} <sup>3</sup>`);
+document.getElementById(`Ergebnis2`).innerHTML = (`Oberfläche O = 2 x (a x b + a x c + b x c)<br>
+        = 2 x (${laenge1} ${einheit} x ${laenge2} ${einheit} + ${laenge1} ${einheit} x ${laenge3} ${einheit} + ${laenge2} ${einheit} 
+        x ${laenge3} ${einheit})<br>
+                                               = ${oberflaeche}  ${einheit} <sup>2</sup>`);
 }
 
 </script>	
 
 
 
-<p id="Ergebnis"></p>
 
+
+<div>
 <form id="form1">
 	
 	<fieldset>
+	<h1>Volumen und Oberfläche eines Quaders</h1>
 	<img src="quader.png">
 <p>Wähle die richtige Einheit</p>
 <div>
@@ -108,17 +138,17 @@ document.getElementById(`Ergebnis`).innerHTML = (`Das Volumen des Quaders beträ
 	<label for="einheit4">m</label>
 </div>
 <p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
-<p>Gebe die Länge der ersten Seite ein<br>
+<p>Gebe die Länge ein<br>
    Nur die Zahl, ohne Einheit</p>
-<input type="number" name="laenge1" id="laenge1"/>
+<input type="text" name="laenge1" id="laenge1"/>
 <br>
-<p>Gebe die Länge der zweite Seite ein<br>
+<p>Gebe die Breite ein<br>
    Nur die Zahl, ohne Einheit</p>
-<input type="number" name="laenge2" id="laenge2"/>
+<input type="text" name="laenge2" id="laenge2"/>
 <br>
-<p>Gebe die Länge der dritten Seite ein<br>
+<p>Gebe die Höhe ein<br>
    Nur die Zahl, ohne Einheit</p>
-<input type="number" name="laenge3" id="laenge3"/>
+<input type="text" name="laenge3" id="laenge3"/>
 <br>
 <br>
 <br>
@@ -135,7 +165,17 @@ document.getElementById(`Ergebnis`).innerHTML = (`Das Volumen des Quaders beträ
 </ul>
 	</fieldset>
 </form>
+</div>
+<div>
+<fieldset>
+<p>Ergebniss:</p>
+<br>
+<p id="Ergebnis"></p>
+<br>
+<p id="Ergebnis2"></p>
+</fieldset>
 
+</div>
 
 </body>
 
