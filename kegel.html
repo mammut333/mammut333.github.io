@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+<meta charset="utf-8" />
+<title>Kegel</title>
+<meta name="generator" content="Geany 1.29" />
+
+<style>
+body {
+	background-color: #1E90FF;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+h1 {
+	text-align: center;
+}
+
+p {
+	color: black;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+fieldset {
+	margin-left:20%;
+	
+	border-radius: 10px;
+	background: #0000FF;
+	border: 2px solid black;
+	display: block;
+	padding: 15px;
+}
+
+label	{
+	border: 2px solid black;
+	border-radius: 10%;
+	padding: 2px 10px; 
+	background: #1E90FF;
+	font-size: 18px;
+}
+
+
+	
+
+div {
+	width: 45%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#feld2	{
+	
+	margin-top: 10px;
+	
+}
+
+img {
+	text-align: center;
+	width: 70%;
+	background: white;
+	margin-left: 10%;
+	border-radius: 15px;
+}
+
+#Ergebnis, #Ergebnis2 {
+	color: red;
+	font-size: 23px;
+}
+
+#Achtung {
+	color: red;
+}
+
+a {
+	color: black;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+</style>
+</head>
+
+<body>
+  <script>
+function rechneAus() {  
+  let einheit = document.getElementsByName("einheit");
+  let radius = document.getElementById(`laenge1`).value;
+  let hoehe = document.getElementById(`laenge2`).value;
+   
+  if (einheit[0].checked) {
+		einheit = "mm";
+	}else if(einheit[1].checked) {
+			einheit = "cm";
+	}else if (einheit[2].checked) {
+	einheit = "dm";
+	}else if (einheit[3].checked) {
+		einheit = "m";
+	} 
+  let oberFlaeche = (2 * 3.14 * radius * (radius + hoehe)).toFixed(2);
+  let volumen = (3.14 * radius * radius * hoehe / 3).toFixed(3);
+  
+ /* document.getElementById(`Ergebnis`).innerHTML = (`Oberfläche O = <br>2 x &Pi; x r <sup>2</sup> 
+  + 2 x r x &Pi; <br>
+  = 2 x 3.14 x (${radius} ${einheit})<sup>2</sup> + 2 x 3.14 x ${radius} ${einheit} x ${hoehe} ${einheit}<br>
+  = ${oberFlaeche} ${einheit} <sup>2</sup>`);*/
+
+  document.getElementById(`Ergebnis`).innerHTML = (`Volumen V = <br>&Pi; x r <sup>2</sup> x h : 3<br>
+   = 3.14 x (${radius} ${einheit})<sup>2</sup> x ${hoehe} ${einheit} : 3<br>
+   = ${volumen} ${einheit}<sup>3</sup>`); 
+    
+ } 			               
+  </script>	
+  
+  <div>	
+<form id="form1">
+	
+	<fieldset>
+		<h1>Der Kegel</h1>
+		<img src="kegel.png">
+<p>Wähle die richtige Einheit</p>
+
+<input type="radio" name="einheit" id="einheit1" value="mm" class="radiobutton"/>
+	<label for="einheit1">mm</label>
+<input type="radio" name="einheit" id="einheit2" value="cm" class="radiobutton"/>
+	<label for="einheit2">cm</label><br><br>
+<input type="radio" name="einheit" id="einheit3" value="dm" class="radiobutton"/>
+	<label for="einheit3">dm</label>
+<input type="radio" name="einheit" id="einheit4" value="m" class="radiobutton"/>
+	<label for="einheit4">m</label>
+
+<p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
+<p>Gebe die Länge des Radius ein<br>
+   Nur die Zahl, ohne Einheit</p>
+<input type="text" name="laenge1" id="laenge1"/>
+<br>
+<p>Gebe die Höhe ein<br>
+   Nur die Zahl, ohne Einheit</p>
+<input type="text" name="laenge2" id="laenge2"/>
+<br>
+<br>
+<br>
+<br>
+<input type="button" onClick="rechneAus()" value="Zum Ergebnis"/>
+<br>
+<br>
+<fieldset>
+<input type="reset" form="form1" value="Eingabe löschen"/>
+<br>
+<br>
+<ul>
+<li><a href="index.html" title="Zurück zur Startseite">Zur Startseite</a></li>
+<br>
+<li><a href="Körperberechnungen.html" title="Zurück zur Matheseite">Zur Matheseite</a></li>
+</ul>
+</fieldset>
+	</fieldset>
+</form>
+</div>
+<div>
+<fieldset id="feld2">
+
+<p>Ergebnis:</p>
+<p id="Ergebnis"></p>
+<br>
+<p id="Ergebnis2"></p></p>
+
+</fieldset>
+</div>
+
+
+</body>
+
+</html>
