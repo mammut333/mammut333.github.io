@@ -92,7 +92,8 @@ function rechneAus() {
   let radius = document.getElementById(`laenge1`).value;
   let hoehe = document.getElementById(`laenge2`).value;
    
-  if (einheit[0].checked) {
+  
+   if (einheit[0].checked) {
 		einheit = "mm";
 	}else if(einheit[1].checked) {
 			einheit = "cm";
@@ -100,7 +101,11 @@ function rechneAus() {
 	einheit = "dm";
 	}else if (einheit[3].checked) {
 		einheit = "m";
-	} 
+    }else {
+		alert("Hallo Kerstin, du hast die Einheit vergessen!");
+		}
+	
+		 
   let oberFlaeche = (2 * 3.14 * radius * (radius + hoehe)).toFixed(2);
   let volumen = (3.14 * radius * radius * hoehe).toFixed(3);
   
@@ -122,7 +127,8 @@ function rechneAus() {
 	
 	<fieldset>
 		<h1>Der Zylinder</h1>
-		<img src="zylinder.jpg">
+		<img src="zylinder.jpg" alt="zylinder">
+
 <p>Wähle die richtige Einheit</p>
 
 <input type="radio" name="einheit" id="einheit1" value="mm" class="radiobutton"/>
@@ -133,7 +139,6 @@ function rechneAus() {
 	<label for="einheit3">dm</label>
 <input type="radio" name="einheit" id="einheit4" value="m" class="radiobutton"/>
 	<label for="einheit4">m</label>
-
 <p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
 <p>Gebe die Länge des Radius ein<br>
    Nur die Zahl, ohne Einheit</p>
@@ -143,6 +148,7 @@ function rechneAus() {
    Nur die Zahl, ohne Einheit</p>
 <input type="text" name="laenge2" id="laenge2"/>
 <br>
+
 <br>
 <br>
 <br>
@@ -168,7 +174,7 @@ function rechneAus() {
 <p>Ergebnis:</p>
 <p id="Ergebnis"></p>
 <br>
-<p id="Ergebnis2"></p></p>
+<p id="Ergebnis2"></p>
 
 </fieldset>
 </div>
