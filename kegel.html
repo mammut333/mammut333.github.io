@@ -121,16 +121,7 @@ function rechneAus() {
 	<fieldset>
 		<h1>Der Kegel</h1>
 		<img src="kegel.png">
-<p>Wähle die richtige Einheit</p>
 
-<input type="radio" name="einheit" id="einheit1" value="mm" class="radiobutton"/>
-	<label for="einheit1">mm</label>
-<input type="radio" name="einheit" id="einheit2" value="cm" class="radiobutton"/>
-	<label for="einheit2">cm</label><br><br>
-<input type="radio" name="einheit" id="einheit3" value="dm" class="radiobutton"/>
-	<label for="einheit3">dm</label>
-<input type="radio" name="einheit" id="einheit4" value="m" class="radiobutton"/>
-	<label for="einheit4">m</label>
 
 <p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
 <p>Gebe die Länge des Radius ein<br>
@@ -141,7 +132,16 @@ function rechneAus() {
    Nur die Zahl, ohne Einheit</p>
 <input type="text" name="laenge2" id="laenge2"/>
 <br>
-<br>
+<p>Wähle die richtige Einheit</p>
+
+<input type="radio" name="einheit" id="einheit1" value="mm" class="radiobutton"/>
+	<label for="einheit1">mm</label>
+<input type="radio" name="einheit" id="einheit2" value="cm" class="radiobutton"/>
+	<label for="einheit2">cm</label><br><br>
+<input type="radio" name="einheit" id="einheit3" value="dm" class="radiobutton"/>
+	<label for="einheit3">dm</label>
+<input type="radio" name="einheit" id="einheit4" value="m" class="radiobutton"/>
+	<label for="einheit4">m</label>
 <br>
 <br>
 <input type="button" onClick="rechneAus()" value="Zum Ergebnis"/>

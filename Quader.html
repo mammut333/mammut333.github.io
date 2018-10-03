@@ -126,18 +126,7 @@ document.getElementById(`Ergebnis2`).innerHTML = (`Oberfläche O = <br>2 x (a x 
 	<fieldset>
 	<h1>Volumen und Oberfläche eines Quaders</h1>
 	<img src="quader.png">
-<p>Wähle die richtige Einheit</p>
 
-<input type="radio" name="einheit" id="einheit1" value="mm"/>
-	<label for="einheit1">mm</label>
-<input type="radio" name="einheit" id="einheit2" value="cm"/>
-	<label for="einheit2">cm</label>
-	<br>
-	<br>
-<input type="radio" name="einheit" id="einheit3" value="dm"/>
-	<label for="einheit3">dm</label>
-<input type="radio" name="einheit" id="einheit4" value="m"/>
-	<label for="einheit4">m</label>
 
 <p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
 <p>Gebe die Länge ein<br>
@@ -152,6 +141,16 @@ document.getElementById(`Ergebnis2`).innerHTML = (`Oberfläche O = <br>2 x (a x 
    Nur die Zahl, ohne Einheit</p>
 <input type="text" name="laenge3" id="laenge3"/>
 <br>
+<p>Wähle die richtige Einheit</p>
+
+<input type="radio" name="einheit" id="einheit1" value="mm"/>
+	<label for="einheit1">mm</label>
+<input type="radio" name="einheit" id="einheit2" value="cm"/>
+	<label for="einheit2">cm</label>
+<input type="radio" name="einheit" id="einheit3" value="dm"/>
+	<label for="einheit3">dm</label>
+<input type="radio" name="einheit" id="einheit4" value="m"/>
+	<label for="einheit4">m</label>
 <br>
 <br>
 <input type="button" onClick="rechneAus()" value="Zum Ergebnis"/>
@@ -171,7 +170,7 @@ document.getElementById(`Ergebnis2`).innerHTML = (`Oberfläche O = <br>2 x (a x 
 </div>
 <div>
 <fieldset>
-<p>Ergebnis:</p>
+<p>Ergebniss:</p>
 <br>
 <p id="Ergebnis"></p>
 <br>

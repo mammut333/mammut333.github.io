@@ -123,6 +123,17 @@ document.getElementById(`Ergebnis`).innerHTML = (`Volumen V = <br>(Länge a)<sup
 	<fieldset>
 	<h1>Volumen einer Pyramide</h1>
 	<img src="pyramide.png" alt="Pyramide">
+
+
+<p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
+<p>Gebe die Seitenänge a ein<br>
+   Nur die Zahl, ohne Einheit</p>
+<input type="text" name="laenge1" id="laenge1"/>
+<br>
+<p>Gebe die Höhe h ein<br>
+   Nur die Zahl, ohne Einheit</p>
+<input type="text" name="laenge2" id="laenge2"/>
+<br>
 <p>Wähle die richtige Einheit</p>
 
 <input type="radio" name="einheit" id="einheit1" value="mm"/>
@@ -135,15 +146,6 @@ document.getElementById(`Ergebnis`).innerHTML = (`Volumen V = <br>(Länge a)<sup
 	<label for="einheit3">dm</label>
 <input type="radio" name="einheit" id="einheit4" value="m"/>
 	<label for="einheit4">m</label>
-
-<p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
-<p>Gebe die Seitenänge a ein<br>
-   Nur die Zahl, ohne Einheit</p>
-<input type="text" name="laenge1" id="laenge1"/>
-<br>
-<p>Gebe die Höhe h ein<br>
-   Nur die Zahl, ohne Einheit</p>
-<input type="text" name="laenge2" id="laenge2"/>
 <br>
 <br>
 <input type="button" onClick="rechneAus()" value="Zum Ergebnis"/>
@@ -164,7 +166,7 @@ document.getElementById(`Ergebnis`).innerHTML = (`Volumen V = <br>(Länge a)<sup
 </div>
 <div>
 <fieldset>
-<p>Ergebnis:</p>
+<p>Ergebniss:</p>
 <br>
 <p id="Ergebnis"></p>
 <br>
