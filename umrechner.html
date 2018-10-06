@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+<meta charset="utf-8" />
+<title>umrechner3</title>
+<meta name="generator" content="Geany 1.29" />
+
+
+<style>
+
+    body {
+	background-color: #1E90FF;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+h1 {
+	text-align: center;
+}
+
+p {
+	color: black;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+
+
+label	{
+	border: 2px solid black;
+	border-radius: 10%;
+	padding: 2px 8px; 
+	background: #1E90FF;
+	font-size: 18px;
+}
+
+
+	
+
+fieldset {
+	float: left;
+	width: 28%;
+	margin-left: 3.3333333%;
+	background: #0000FF;
+	box-sizing: border-box;
+	border-color: black;
+	border-radius: 5%;
+	border: 2px solid black;
+}
+
+#feld1, #feld2, #feld3	{
+	width: auto;
+	margin-top: 10px;
+	margin-left: 10px;
+	padding-right: 20%;
+}
+
+#Ergebnis, #Ergebnis2, #Ergebnis3 {
+	color: red;
+	font-size: 23px;
+}
+
+#ErgebnisA, #ErgebnisB, #ErgebnisC {
+	color: red;
+	font-size: 23px;
+}
+
+#Achtung, #Achtung2, #Achtung3 {
+	color: red;
+}
+
+a {
+	color: black;
+	font-size: 20px;
+	text-decoration: none;
+}
+a:hover {
+	color: grey;
+}
+
+</style>
+</head>
+<body>
+	<script>
+	
+function rechneAus() {
+let einheit = document.getElementsByName("einheit");
+let einheitB = document.getElementsByName("einheitB");
+let laenge1 = document.getElementById(`laenge1`).value;
+let laenge2 = document.getElementById(`laenge1`).value;
+
+if (einheit[0].checked) {
+		einheit = "mm";
+	}else if(einheit[1].checked) {
+			einheit = "cm";
+	}else if (einheit[2].checked) {
+	einheit = "dm";
+	}else if (einheit[3].checked) {
+		einheit = "m";
+	}else if (einheit[4].checked) {
+		einheit = "km";
+	}
+	
+
+if (einheitB[0].checked) {
+		einheitB = "mm";
+	}else if(einheitB[1].checked) {
+			einheitB = "cm";
+	}else if (einheitB[2].checked) {
+	einheitB = "dm";
+	}else if (einheitB[3].checked) {
+		einheitB = "m";
+	}else if (einheitB[4].checked) {
+		einheitB = "km";
+	} 
+	
+if (einheit + einheitB == "mmcm") {	
+	laenge1 = laenge1 / 10;
+} else if (einheit + einheitB == "mmdm") {
+	laenge1 = laenge1 / 100;
+} else if (einheit + einheitB == "mmm") {
+	laenge1 = laenge1 / 1000;
+} else if (einheit + einheitB == "mmkm") {
+	laenge1 = laenge1 / 1000000;
+} else if (einheit + einheitB == "cmmm") {
+	laenge1 = laenge1 * 10;	
+} else if (einheit + einheitB == "cmdm") {
+	laenge1 = laenge1 / 10;	
+} else if (einheit + einheitB == "cmm") {
+	laenge1 = laenge1 / 100;
+} else if (einheit + einheitB == "cmkm") {
+	laenge1 = laenge1 / 100000;
+} else if (einheit + einheitB == "dmmm") {
+	laenge1 = laenge1 * 100;
+} else if (einheit + einheitB == "dmcm") {
+	laenge1 = laenge1 * 10;
+} else if (einheit + einheitB == "dmm") {
+	laenge1 = laenge1 / 10;
+} else if (einheit + einheitB == "dmkm") {
+	laenge1 = laenge1 / 10000;
+} else if (einheit + einheitB == "mmm") {
+	laenge1 = laenge1 * 1000;
+} else if (einheit + einheitB == "mcm") {
+	laenge1 = laenge1 * 100;
+} else if (einheit + einheitB == "mdm") {
+	laenge1 = laenge1 * 10;
+} else if (einheit + einheitB == "mkm") {
+	laenge1 = laenge1 / 1000;
+} else if (einheit + einheitB == "kmmm") {
+	laenge1 = laenge1 * 1000000;
+} else if (einheit + einheitB == "kmcm") {
+	laenge1 = laenge1 * 100000;
+} else if (einheit + einheitB == "kmdm") {
+	laenge1 = laenge1 * 10000;
+} else if (einheit + einheitB == "kmm") {
+	laenge1 = laenge1 * 1000;
+}
+laenge1 = laenge1.toFixed(6);
+document.getElementById("Ergebnis").innerHTML = ((`${laenge2} ${einheit} = ${laenge1} ${einheitB}`));
+}
+
+function flaeche() {
+let einheitF1 = document.getElementsByName("einheitF1");
+let einheitF2 = document.getElementsByName("einheitF2");
+let laengeF1 = document.getElementById(`laengeF1`).value;
+let laengeF2 = document.getElementById(`laengeF1`).value;
+
+if (einheitF1[0].checked) {
+		einheitF1 = "mm<sup>2</sup>";
+	} else if(einheitF1[1].checked) {
+			einheitF1 = "cm<sup>2</sup>";
+	} else if (einheitF1[2].checked) {
+	einheitF1 = "dm<sup>2</sup>";
+	} else if (einheitF1[3].checked) {
+		einheitF1 = "m<sup>2</sup>";
+	} else if (einheitF1[4].checked) {
+		einheitF1 = "a";
+	} else if (einheitF1[5].checked) {
+		einheitF1 = "ha";
+	} else if (einheitF1[6].checked) {
+		einheitF1 = "km<sup>2</sup>"; 
+	} 
+
+if (einheitF2[0].checked) {
+		einheitF2 = "mm<sup>2</sup>";
+	} else if(einheitF2[1].checked) {
+			einheitF2 = "cm<sup>2</sup>";
+	} else if (einheitF2[2].checked) {
+	einheitF2 = "dm<sup>2</sup>";
+	} else if (einheitF2[3].checked) {
+		einheitF2 = "m<sup>2</sup>";
+	} else if (einheitF2[4].checked) {
+		einheitF2 = "a";
+	} else if (einheitF2[5].checked) {
+		einheitF2 = "ha";
+	} else if (einheitF2[6].checked) {
+		einheitF2 = "km<sup>2</sup>";
+	} 
+	
+if (einheitF1 + einheitF2 == "mm<sup>2</sup>cm<sup>2</sup>") {	
+	laengeF1 = laengeF1 / 100;
+} else if (einheitF1 + einheitF2 == "mm<sup>2</sup>dm<sup>2</sup>") {
+	laengeF1 = laengeF1 / 10000;
+} else if (einheitF1 + einheitF2 == "mm<sup>2</sup>m<sup>2</sup>") {
+	laengeF1 = laengeF1 / 1000000;
+} else if (einheitF1 + einheitF2 == "mm<sup>2</sup>a") {
+	laengeF1 = laengeF1 / 100000000;
+} else if (einheitF1 + einheitF2 == "mm<sup>2</sup>ha") {
+	laengeF1 = laengeF1 / 10000000000;
+} else if (einheitF1 + einheitF2 == "mm<sup>2</sup>km<sup>2</sup>") {
+	laengeF1 = laengeF1 / 1000000000000;
+
+} else if (einheitF1 + einheitF2 == "cm<sup>2</sup>mm<sup>2</sup>") {
+	laengeF1 = laengeF1 * 100;	
+} else if (einheitF1 + einheitF2 == "cm<sup>2</sup>dm<sup>2</sup>") {
+	laengeF1 = laengeF1 / 100;	
+} else if (einheitF1 + einheitF2 == "cm<sup>2</sup>m<sup>2</sup>") {
+	laengeF1 = laengeF1 / 10000;
+} else if (einheitF1 + einheitF2 == "cm<sup>2</sup>a") {
+	laengeF1 = laengeF1 / 1000000;
+} else if (einheitF1 + einheitF2 == "cm<sup>2</sup>ha") {
+	laengeF1 = laengeF1 / 100000000;
+} else if (einheitF1 + einheitF2 == "cm<sup>2</sup>km<sup>2</sup>") {
+	laengeF1 = laengeF1 / 10000000000;
+
+} else if (einheitF1 + einheitF2 == "dm<sup>2</sup>mm<sup>2</sup>") {
+	laengeF1 = laengeF1 * 10000;
+} else if (einheitF1 + einheitF2 == "dm<sup>2</sup>cm<sup>2</sup>") {
+	laengeF1 = laengeF1 * 100;
+} else if (einheitF1 + einheitF2 == "dm<sup>2</sup>m<sup>2</sup>") {
+	laengeF1 = laengeF1 / 100;
+} else if (einheitF1 + einheitF2 == "dm<sup>2</sup>a") {	
+	laengeF1 = laengeF1 / 10000;
+} else if (einheitF1 + einheitF2 == "dm<sup>2</sup>ha") {
+	laengeF1 = laengeF1 / 1000000;
+} else if (einheitF1 + einheitF2 == "dm<sup>2</sup>km<sup>2</sup>") {
+	laengeF1 = laengeF1 / 100000000;
+
+} else if (einheitF1 + einheitF2 == "m<sup>2</sup>mm<sup>2</sup>") {
+	laengeF1 = laengeF1 * 1000000;
+} else if (einheitF1 + einheitF2 == "m<sup>2</sup>cm<sup>2</sup>") {
+	laengeF1 = laengeF1 * 10000;
+} else if (einheitF1 + einheitF2 == "m<sup>2</sup>dm<sup>2</sup>") {
+	laengeF1 = laengeF1 * 100;
+} else if (einheitF1 + einheitF2 == "m<sup>2</sup>a") {
+	laengeF1 = laengeF1 / 100; 
+} else if (einheitF1 + einheitF2 == "m<sup>2</sup>ha") {
+	laengeF1 = laengeF1 /10000;
+} else if (einheitF1 + einheitF2 == "m<sup>2</sup>km<sup>2</sup>") {
+	laengeF1 = laengeF1 / 1000000;
+
+} else if (einheitF1 + einheitF2 == "acm<sup>2</sup>") {
+	laengeF1 = laengeF1 * 1000000;
+} else if (einheitF1 + einheitF2 == "adm<sup>2</sup>") {
+	laengeF1 = laengeF1 * 10000;
+} else if (einheitF1 + einheitF2 == "am<sup>2</sup>") {
+	laengeF1 = laengeF1 * 100;
+} else if (einheitF1 + einheitF2 == "aha") {
+	laengeF1 = laengeF1 / 100; 
+} else if (einheitF1 + einheitF2 == "akm<sup>2</sup>") {
+	laengeF1 = laengeF1 /10000;
+
+} else if (einheitF1 + einheitF2 == "hadm<sup>2</sup>") {
+	laengeF1 = laengeF1 * 1000000;
+} else if (einheitF1 + einheitF2 == "ham<sup>2</sup>") {
+	laengeF1 = laengeF1 * 10000;
+} else if (einheitF1 + einheitF2 == "haa") {
+	laengeF1 = laengeF1 * 100;
+} else if (einheitF1 + einheitF2 == "hakm<sup>2</sup>") {
+	laengeF1 = laengeF1 / 100; 
+
+
+} else if (einheitF1 + einheitF2 == "km<sup>2</sup>m<sup>2</sup>") {
+	laengeF1 = laengeF1 /10000;
+} else if (einheitF1 + einheitF2 == "km<sup>2</sup>a") {
+	laengeF1 = laengeF1 /100;
+}
+
+laengeF1 = laengeF1.toFixed(6);
+
+document.getElementById("Ergebnis2").innerHTML = ((`${laengeF2} ${einheitF1} = ${laengeF1} ${einheitF2}`));
+}
+
+
+function vol() {
+let einheitV1 = document.getElementsByName("einheitV1");
+let einheitV2 = document.getElementsByName("einheitV2");
+let laengeV1 = document.getElementById(`laengeV1`).value;
+let laengeV2 = document.getElementById(`laengeV1`).value;
+
+if (einheitV1[0].checked) {
+		einheitV1 = "cm<sup>3</sup>";
+	} else if(einheitV1[1].checked) {
+			einheitV1 = "dm<sup>3</sup>";
+	} else if (einheitV1[2].checked) {
+	einheitV1 = "m<sup>3</sup>";
+	} 
+
+if (einheitV2[0].checked) {
+		einheitV2 = "cm<sup>3</sup>";
+	} else if(einheitV2[1].checked) {
+			einheitV2 = "dm<sup>3</sup>";
+	} else if (einheitV2[2].checked) {
+	einheitV2 = "m<sup>3</sup>";
+	} 
+	
+if (einheitV1 + einheitV2 == "cm<sup>3</sup>dm<sup>3</sup>") {	
+	laengeV1 = laengeV1 / 1000;
+} else if (einheitV1 + einheitV2 == "cm<sup>3</sup>m<sup>3</sup>") {
+	laengeV1 = laengeV1 / 1000000;
+} else if (einheitV1 + einheitV2 == "dm<sup>3</sup>cm<sup>3</sup>") {
+	laengeV1 = laengeV1 * 1000;
+} else if (einheitV1 + einheitV2 == "dm<sup>3</sup>m<sup>3</sup>") {
+	laengeV1 = laengeV1 / 1000;
+} else if (einheitV1 + einheitV2 == "m<sup>3</sup>cm<sup>3</sup>") {
+	laengeV1 = laengeV1 * 1000000;	
+} else if (einheitV1 + einheitV2 == "m<sup>3</sup>dm<sup>3</sup>") {
+	laengeV1 = laengeV1 * 1000;		
+}
+
+laengeV1 = laengeV1.toFixed(6);
+
+document.getElementById("Ergebnis3").innerHTML = (`${laengeV2} ${einheitV1} = ${laengeV1} ${einheitV2}`);
+}
+
+</script>
+
+	<div>
+	<fieldset>
+		<h2>Der Längenumrechner</h2>
+<form id="form1">
+	<p id="Achtung">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
+<p>Gebe die Länge ein</p>
+	
+<input type="text" name="laenge1" id="laenge1"/>
+<p>Wähle die Einheit</p>
+	<input type="radio" name="einheit" id="einheit1" value="mm"/>
+	<label for="einheit1">mm</label>
+<input type="radio" name="einheit" id="einheit2" value="cm"/>
+	<label for="einheit2">cm</label>
+<input type="radio" name="einheit" id="einheit3" value="dm"/>
+	<label for="einheit3">dm</label>
+	<br><br>
+<input type="radio" name="einheit" id="einheit4" value="m"/>
+	<label for="einheit4">m</label>
+<input type="radio" name="einheit" id="einheit5" value="km"/>
+	<label for="einheit5">km</label>
+
+<p>Wähle die Einheit, in die du umrechnen möchtest</p>
+		
+	<input type="radio" name="einheitB" id="einheitB1" value="mm"/>
+	<label for="einheitB1">mm</label>
+<input type="radio" name="einheitB" id="einheitB2" value="cm"/>
+	<label for="einheitB2">cm</label>
+<input type="radio" name="einheitB" id="einheitB3" value="dm"/>
+	<label for="einheitB3">dm</label>
+	<br><br>
+<input type="radio" name="einheitB" id="einheitB4" value="m"/>
+	<label for="einheitB4">m</label>
+<input type="radio" name="einheitB" id="einheitB5" value="km"/>
+	<label for="einheitB5">km</label>
+
+<br><br>
+
+	<input type="button" onClick="rechneAus()" value="Zum Ergebnis"/>
+	
+	<fieldset id="feld1">
+	<p id="ErgebnisA">Ergebnis:</p>
+	<p id="Ergebnis"></p>
+	<input type="reset" form="form1" value="Eingabe löschen"/>
+	</form>
+	<ul>
+	<li><a href="index.html" title="Startseite">Zur Startseite</a></li>
+	<li><a href="Körperberechnungen.html" title="Zur Matheseite">Zur Matheseite</a></li>
+	</ul>
+	</fieldset>
+	</fieldset>
+	</div>
+	
+	<div class="box2">
+	<fieldset>
+		<form id="form2">
+		<h2>Der Flächenumrechner</h2>
+	<p id="Achtung2">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
+<p>Gebe die Fläche ein</p>
+	<input type="text" name="laengeF1" id="laengeF1"/>
+<p>Wähle die Einheit</p>
+	<input type="radio" name="einheitF1" id="einheitF11" value="mm<sup>2</sup>"/>
+	<label for="einheitF11">mm<sup>2</sup></label>
+<input type="radio" name="einheitF1" id="einheitF12" value="cm<sup>2</sup>"/>
+	<label for="einheitF12">cm<sup>2</sup></label>
+	<br><br>
+<input type="radio" name="einheitF1" id="einheitF13" value="dm<sup>2</sup>"/>
+	<label for="einheitF13">dm<sup>2</sup></label>
+<input type="radio" name="einheitF1" id="einheitF14" value="m<sup>2</sup>"/>
+	<label for="einheitF14">m<sup>2</sup></label>
+<input type="radio" name="einheitF1" id="einheitF15" value="a"/>
+	<label for="einheitF15">a</label>
+	<br><br>
+<input type="radio" name="einheitF1" id="einheitF16" value="ha"/>
+	<label for="einheitF16">ha</label>
+<input type="radio" name="einheitF1" id="einheitF17" value="km<sup>2</sup>"/>
+	<label for="einheitF17">km<sup>2</sup></label>
+	
+
+<p>Wähle die Einheit, in die du umrechnen möchtest</p>
+	<input type="radio" name="einheitF2" id="einheitF21" value="mm<sup>2</sup>"/>
+	<label for="einheitF21">mm<sup>2</sup></label>
+<input type="radio" name="einheitF2" id="einheitF22" value="cm<sup>2</sup>"/>
+	<label for="einheitF22">cm<sup>2</sup></label>
+	<br><br>
+<input type="radio" name="einheitF2" id="einheitF23" value="dm<sup>2</sup>"/>
+	<label for="einheitF23">dm<sup>2</sup></label>
+<input type="radio" name="einheitF2" id="einheitF24" value="m<sup>2</sup>"/>
+	<label for="einheitF24">m<sup>2</sup></label>
+<input type="radio" name="einheitF2" id="einheitF25" value="a"/>
+	<label for="einheitF25">a</label>
+	<br><br>
+<input type="radio" name="einheitF2" id="einheitF26" value="ha"/>
+	<label for="einheitF26">ha</label>
+<input type="radio" name="einheitF2" id="einheitF27" value="km<sup>2</sup>"/>
+	<label for="einheitF27">km<sup>2</sup></label>
+
+<br><br>
+
+	<input type="button" onClick="flaeche()" value="Zum Ergebnis"/>
+	<fieldset id="feld2">
+	<p id="ErgebnisB">Ergebnis:</p>
+	<p id="Ergebnis2"></p>
+	<input type="reset" form="form2" value="Eingabe löschen"/>
+	</form>
+	<ul>
+	<li><a href="index.html" title="Startseite">Zur Startseite</a></li>
+	<li><a href="Körperberechnungen.html" title="Zur Matheseite">Zur Matheseite</a></li>
+	</ul>
+		</form>
+		</fieldset>
+	</fieldset>
+	</div>
+	
+	<div class="box3">
+	<fieldset>
+		<form id="form3">
+		<h2>Der Volumenumrechner</h2>
+	<p id="Achtung3">Achtung! Ein Komma muss als Punkt eingegeben werden</p>
+<p>Gebe das Volumen ein</p>
+<input type="text" name="laengeV1" id="laengeV1"/>
+
+	<p>Wähle die Einheit</p>
+<input type="radio" name="einheitV1" id="einheitV11" value="cm<sup>3</sup>"/>
+	<label for="einheitV11">cm<sup>3</sup></label>
+<input type="radio" name="einheitV1" id="einheitV12" value="dm<sup>3</sup>"/>
+	<label for="einheitV12">dm<sup>3</sup></label>
+<input type="radio" name="einheitV1" id="einheitV13" value="m<sup>3</sup>"/>
+	<label for="einheitV13">m<sup>3</sup></label>
+	<br><br>
+
+	
+
+<p>Wähle die Einheit, in die du umrechnen möchtest</p>
+<input type="radio" name="einheitV2" id="einheitV21" value="cm<sup>3</sup>"/>
+	<label for="einheitV21">cm<sup>3</sup></label>
+<input type="radio" name="einheitV2" id="einheitV22" value="dm<sup>3</sup>"/>
+	<label for="einheitV22">dm<sup>3</sup></label>
+<input type="radio" name="einheitV2" id="einheitV23" value="dm<sup>3</sup>"/>
+	<label for="einheitV23">m<sup>3</sup></label>
+	<br><br>
+
+
+<br><br>
+
+	<input type="button" onClick="vol()" value="Zum Ergebnis"/>
+	<fieldset id="feld3">
+	<p id="ErgebnisC">Ergebnis:</p>
+	<p id="Ergebnis3"></p>
+	<input type="reset" form="form3" value="Eingabe löschen"/>
+	</form>
+	<ul>
+	<li><a href="index.html" title="Startseite">Zur Startseite</a></li>
+	<li><a href="Körperberechnungen.html" title="Zur Matheseite">Zur Matheseite</a></li>
+	</ul>		
+		</form>
+		</fieldset>
+	</fieldset>
+	</div>
+</body>
+
+</html>
