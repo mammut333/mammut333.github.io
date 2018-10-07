@@ -107,14 +107,14 @@ function rechneAus() {
 		}
 	
 		 
-  let oberFlaeche = (2 * 3.14 * radius * (radius + hoehe)).toFixed(2);
+  let oberFlaeche = (2 * 3.14 * radius * radius + 3.14 * 2 * radius * hoehe).toFixed(3);
   let mantelFlaeche = (3.14 * 2 * radius * hoehe).toFixed(3);
   let volumen = (3.14 * radius * radius * hoehe).toFixed(3);
   
- document.getElementById(`Ergebnis`).innerHTML = (`Oberfläche O = <br>2 x &Pi; x r <sup>2</sup> 
+document.getElementById(`Ergebnis`).innerHTML = (`Oberfläche O = <br>2 x &Pi; x r <sup>2</sup> 
   + 2 x r x &Pi; <br>
   = 2 x 3.14 x (${radius} ${einheit})<sup>2</sup> + 2 x 3.14 x ${radius} ${einheit} x ${hoehe} ${einheit}<br>
-  = ${oberFlaeche} ${einheit} <sup>2</sup>`);
+  = ${oberFlaeche} ${einheit}<sup>2</sup>`);
   
   document.getElementById(`Ergebnis2`).innerHTML = (`Mantelfläche M = <br>2 x &Pi; x r x h <br>
   = 2 x 3.14 x ${radius} ${einheit} x ${hoehe} ${einheit}<br>= ${mantelFlaeche} ${einheit}<sup>2</sup>`);
