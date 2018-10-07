@@ -7,7 +7,7 @@ body {
 }
 
 #header {
-	background-color: #1abc9c;
+	background-color: #AE544E;
 	height: 150px;
 	line-heigh: 150px;
 }
@@ -45,7 +45,7 @@ body {
 }
 
 #footer {
-	background-color: #2f2f2f;
+	background-color: #3A3838;
 	padding: 50px 0;
 }
 
@@ -67,7 +67,7 @@ body {
 }
 
 a {
-	color: #1abc9c;
+	color: #AE544E;
 	text-decoration: none;
 }
 

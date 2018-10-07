@@ -9,7 +9,7 @@
 
 <style>
 body {
-	background-color: #1E90FF;
+	background-color: #ECA385;
 	font-size: 18px;
 	font-weight: bold;
 }
@@ -28,7 +28,7 @@ fieldset {
 	margin-left:20%;
 	
 	border-radius: 10px;
-	background: #0000FF;
+	background: #AE544E;
 	border: 2px solid black;
 	display: block;
 	padding: 15px;
@@ -38,7 +38,7 @@ label	{
 	border: 2px solid black;
 	border-radius: 10%;
 	padding: 2px 10px; 
-	background: #1E90FF;
+	background: #ECA385;
 	font-size: 18px;
 }
 
@@ -64,13 +64,13 @@ img {
 	border-radius: 15px;
 }
 
-#Ergebnis, #Ergebnis2 {
-	color: red;
+#Ergebnis, #Ergebnis2, #Ergebnis3 {
+	color: white;
 	font-size: 23px;
 }
 
 #Achtung {
-	color: red;
+	color: white;
 }
 
 a {
@@ -102,21 +102,26 @@ function rechneAus() {
 	}else if (einheit[3].checked) {
 		einheit = "m";
     }else {
-		alert("Hallo, du hast die Einheit vergessen!");
+		alert("Du hast die Einheit vergessen!");
 		}
 	
 		 
   let oberFlaeche = (2 * 3.14 * radius * (radius + hoehe)).toFixed(2);
+  let mantelFlaeche = (3.14 * 2 * radius * hoehe).toFixed(3);
   let volumen = (3.14 * radius * radius * hoehe).toFixed(3);
   
-  document.getElementById(`Ergebnis`).innerHTML = (`Oberfläche O = <br>2 x &Pi; x r <sup>2</sup> 
+ document.getElementById(`Ergebnis`).innerHTML = (`Oberfläche O = <br>2 x &Pi; x r <sup>2</sup> 
   + 2 x r x &Pi; <br>
   = 2 x 3.14 x (${radius} ${einheit})<sup>2</sup> + 2 x 3.14 x ${radius} ${einheit} x ${hoehe} ${einheit}<br>
   = ${oberFlaeche} ${einheit} <sup>2</sup>`);
+  
+  document.getElementById(`Ergebnis2`).innerHTML = (`Mantelfläche M = <br>2 x &Pi; x r x h <br>
+  = 2 x 3.14 x ${radius} ${einheit} x ${hoehe} ${einheit}<br>= ${mantelFlaeche} ${einheit}<sup>2</sup>`);
 
-  document.getElementById(`Ergebnis2`).innerHTML = (`Volumen V = <br>&Pi; x r <sup>2</sup> x h<br>
+  document.getElementById(`Ergebnis3`).innerHTML = (`Volumen V = <br>&Pi; x r <sup>2</sup> x h<br>
    = 3.14 x (${radius} ${einheit})<sup>2</sup> x ${hoehe} ${einheit}<br>
    = ${volumen} ${einheit}<sup>3</sup>`); 
+   
    }  			               
   </script>	
   
@@ -155,7 +160,7 @@ function rechneAus() {
 <input type="button" onClick="rechneAus()" value="Zum Ergebnis"/>
 <br>
 <br>
-<fieldset>
+<fieldset id="feld2">
 <input type="reset" form="form1" value="Eingabe löschen"/>
 <br>
 <br>
@@ -169,12 +174,14 @@ function rechneAus() {
 </form>
 </div>
 <div>
-<fieldset id="feld2">
+<fieldset>
 
 <p>Ergebnis:</p>
 <p id="Ergebnis"></p>
 <br>
 <p id="Ergebnis2"></p>
+<br>
+<p id="Ergebnis3"></p>
 
 </fieldset>
 </div>

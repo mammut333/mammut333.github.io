@@ -10,7 +10,7 @@
 <style>
 
 body {
-	 background-color: #BFBFBF;
+	 background-color: #A95E57;
 	 font-size: 20px;
 	 text-align: center;
 	 font-weight: bold;
@@ -18,16 +18,25 @@ body {
  } 
 
 img {
-	
+	border: 5px solid #A95E57;
 	border-radius: 15px;
 	width: 300px;
 	margin-right: 60px;
 }
 
 fieldset {
-	width: 600px;
+	width: 50%;
 	margin: 0 auto;
 	border-radius: 15px;
+	border: 2px solid black;
+	background: #406E61;
+}
+a {
+	text-decoration: none;
+	color: #CED9D9;
+}
+a:hover {
+	color: black;
 }
 
 
@@ -36,14 +45,8 @@ fieldset {
 </head>
 
 <body>
-	
-	
- 
-
- <br>
   
-  <p id="Ergebnis" style="color: blue"></p>
-  <p id="spar"></p>
+  
  
 <script>"use strict";
 
@@ -83,16 +86,19 @@ document.getElementById(`Ergebnis`).innerHTML = (`Dein Auto verbraucht ${verbrau
 <br>
 <br>
 <fieldset>
+	<p id="Ergebnis" style="color: black"></p>
+  <p id="spar"></p>
+  <p style="color: #AE544E; font-size: 30px;">Gute Fahrt!</p>
 <input type="reset" form="form1" value="Eingabe löschen"/>
 <br>
 <br>
-<a style="font-size: 1.5; color: green;" href="index.html">Zurück zur Startseite</a>
+<a href="index.html">Zurück zur Startseite</a>
 <br>
 <br>
-<a style="font-size: 1.5; color: green;" href="Körperberechnungen.html">Zur Mathematikseite</a>
+<a href="Körperberechnungen.html">Zur Mathematikseite</a>
 <br>
 <br>
-<p style="color: blue; font-size: 30px;">Gute Fahrt!</p>
+
 </fieldset>
 	</fieldset>
 </form>

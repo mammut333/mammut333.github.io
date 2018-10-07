@@ -4,16 +4,17 @@
 
 <head>
 <meta charset="utf-8" />
-<title>Umrechner</title>
+<title>umrechner3</title>
 <meta name="generator" content="Geany 1.29" />
 
 
 <style>
 
     body {
-	background-color: #1E90FF;
+	background-color: #ECA385;
 	font-size: 18px;
 	font-weight: bold;
+	font-family: sans-serif;
 }
 
 h1 {
@@ -32,7 +33,7 @@ label	{
 	border: 2px solid black;
 	border-radius: 10%;
 	padding: 2px 8px; 
-	background: #1E90FF;
+	background: #ECA385;
 	font-size: 18px;
 }
 
@@ -43,7 +44,7 @@ fieldset {
 	float: left;
 	width: 28%;
 	margin-left: 3.3333333%;
-	background: #0000FF;
+	background: #AE544E;
 	box-sizing: border-box;
 	border-color: black;
 	border-radius: 5%;
@@ -58,17 +59,17 @@ fieldset {
 }
 
 #Ergebnis, #Ergebnis2, #Ergebnis3 {
-	color: red;
+	color: black;
 	font-size: 23px;
 }
 
 #ErgebnisA, #ErgebnisB, #ErgebnisC {
-	color: red;
 	font-size: 23px;
+	color: white;
 }
 
 #Achtung, #Achtung2, #Achtung3 {
-	color: red;
+	color: white;
 }
 
 a {
@@ -157,7 +158,7 @@ if (einheit + einheitB == "mmcm") {
 } else if (einheit + einheitB == "kmm") {
 	laenge1 = laenge1 * 1000;
 }
-laenge1 = laenge1.toFixed(6);
+laenge1 = laenge1.toFixed(3);
 document.getElementById("Ergebnis").innerHTML = ((`${laenge2} ${einheit} = ${laenge1} ${einheitB}`));
 }
 
@@ -450,9 +451,9 @@ document.getElementById("Ergebnis3").innerHTML = (`${laengeV2} ${einheitV1} = ${
 
 	<p>Wähle die Einheit</p>
 <input type="radio" name="einheitV1" id="einheitV11" value="cm<sup>3</sup>"/>
-	<label for="einheitV11">cm<sup>3</sup></label>
+	<label for="einheitV11">cm<sup>3</sup>(ml)</label>
 <input type="radio" name="einheitV1" id="einheitV12" value="dm<sup>3</sup>"/>
-	<label for="einheitV12">dm<sup>3</sup></label>
+	<label for="einheitV12">dm<sup>3</sup>(l)</label>
 <input type="radio" name="einheitV1" id="einheitV13" value="m<sup>3</sup>"/>
 	<label for="einheitV13">m<sup>3</sup></label>
 	<br><br>
@@ -461,9 +462,9 @@ document.getElementById("Ergebnis3").innerHTML = (`${laengeV2} ${einheitV1} = ${
 
 <p>Wähle die Einheit, in die du umrechnen möchtest</p>
 <input type="radio" name="einheitV2" id="einheitV21" value="cm<sup>3</sup>"/>
-	<label for="einheitV21">cm<sup>3</sup></label>
+	<label for="einheitV21">cm<sup>3</sup>(ml)</label>
 <input type="radio" name="einheitV2" id="einheitV22" value="dm<sup>3</sup>"/>
-	<label for="einheitV22">dm<sup>3</sup></label>
+	<label for="einheitV22">dm<sup>3</sup>(l)</label>
 <input type="radio" name="einheitV2" id="einheitV23" value="dm<sup>3</sup>"/>
 	<label for="einheitV23">m<sup>3</sup></label>
 	<br><br>
